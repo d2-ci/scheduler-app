@@ -1,0 +1,6 @@
+{
+  "name": "scheduler-app",
+  "description": "Create, modify and delete server jobs",
+  "license": "BSD-3-Clause",
+  "version": "30.0.0"
+}
