@@ -1,0 +1,71 @@
+{
+    "name": "scheduler-app",
+    "private": true,
+    "scripts": {
+        "build": "d2-app-scripts build",
+        "start": "d2-app-scripts start",
+        "test": "d2-app-scripts test --coverage",
+        "test:watch": "d2-app-scripts test --watch",
+        "lint": "yarn lint:js && yarn lint:text && yarn lint:css",
+        "lint:js": "d2-style js check",
+        "lint:text": "d2-style text check",
+        "lint:css": "stylelint './src/**/*.css' && prettier './src/**/*.css' --check",
+        "format": "yarn format:js && yarn format:text && yarn format:css",
+        "format:js": "d2-style js apply",
+        "format:text": "d2-style text apply",
+        "format:css": "prettier './src/**/*.css' --write"
+    },
+    "dependencies": {
+        "@dhis2/app-runtime": "^2.7.0",
+        "@dhis2/d2-i18n": "^1.0.6",
+        "@dhis2/prop-types": "2.0.3",
+        "@dhis2/ui": "^6.1.2",
+        "cronstrue": "^1.109.0",
+        "history": "^4.9.0",
+        "moment": "^2.24.0",
+        "react-router": "^5.0.1",
+        "react-router-dom": "^5.2.0"
+    },
+    "devDependencies": {
+        "@dhis2/cli-app-scripts": "^4.0.9",
+        "@dhis2/cli-style": "^7.1.0-alpha.9",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.15.6",
+        "eslint-plugin-compat": "^3.1.2",
+        "eslint-plugin-i18next": "^5.0.0",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "identity-obj-proxy": "^3.0.0",
+        "stylelint": "^10.1.0",
+        "stylelint-config-prettier": "^7.0.0",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-no-unsupported-browser-features": "^3.0.2"
+    },
+    "resolutions": {
+        "@dhis2/app-runtime": "^2.2.2",
+        "@dhis2/d2-i18n": "^1.0.6"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "d2-style commit check",
+            "pre-commit": "d2-style js apply && npm run lint:css && npm run lint:js"
+        }
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "<rootDir>/src/setupTests.js"
+        ],
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx}",
+            "!src/{index.js,serviceWorker.js,setupTests.js}"
+        ],
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            "/src/locales/"
+        ],
+        "moduleNameMapper": {
+            "\\.css$": "identity-obj-proxy"
+        }
+    }
+}
