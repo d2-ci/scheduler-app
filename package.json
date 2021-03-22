@@ -20,8 +20,8 @@
         "cypress:stub": "d2-utils-cypress run --stub --appStart 'yarn start' --serverMinorVersion 36"
     },
     "dependencies": {
-        "@dhis2/app-runtime": "^2.7.0",
-        "@dhis2/d2-i18n": "^1.0.6",
+        "@dhis2/app-runtime": "^2.8.0",
+        "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "2.0.3",
         "@dhis2/ui": "^6.5.0-alpha.2",
         "cronstrue": "^1.109.0",
@@ -31,8 +31,8 @@
         "react-router-dom": "^5.2.0"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^4.0.9",
-        "@dhis2/cli-style": "^7.1.0-alpha.9",
+        "@dhis2/cli-app-scripts": "^6.0.0",
+        "@dhis2/cli-style": "^7.3.0",
         "@dhis2/cli-utils-cypress": "^7.0.0",
         "@dhis2/cypress-commands": "^7.0.0",
         "@dhis2/cypress-plugins": "^7.0.0",
@@ -49,10 +49,6 @@
         "stylelint-config-prettier": "^8.0.2",
         "stylelint-config-standard": "^20.0.0",
         "stylelint-no-unsupported-browser-features": "^4.1.4"
-    },
-    "resolutions": {
-        "@dhis2/app-runtime": "^2.2.2",
-        "@dhis2/d2-i18n": "^1.0.6"
     },
     "husky": {
         "hooks": {
