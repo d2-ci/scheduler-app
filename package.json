@@ -15,7 +15,7 @@
         "cypress:run": "wait-on 'http://localhost:3000' && cypress run",
         "cypress:capture": "concurrently 'yarn cypress:start' 'yarn cypress:run --env dhis2ApiVersion=37,networkMode=capture'",
         "cypress:stub": "concurrently 'yarn cypress:start' 'yarn cypress:run --env dhis2ApiVersion=37,networkMode=stub'",
-        "cypress:live": "concurrently 'yarn cypress:start' 'yarn cypress:open --env dhis2ApiVersion=37,networkMode=live'"
+        "cypress:live": "concurrently 'yarn cypress:start' 'yarn cypress:open --env networkMode=live'"
     },
     "dependencies": {
         "@dhis2/app-runtime": "^2.8.0",
