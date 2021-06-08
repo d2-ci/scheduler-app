@@ -4,57 +4,48 @@
     "scripts": {
         "build": "d2-app-scripts build",
         "start": "d2-app-scripts start",
+        "start:nobrowser": "BROWSER=none d2-app-scripts start",
         "test": "d2-app-scripts test --coverage",
         "test:watch": "d2-app-scripts test --watch",
-        "lint": "yarn lint:js && yarn lint:text && yarn lint:css",
-        "lint:js": "d2-style js check",
-        "lint:text": "d2-style text check",
+        "lint": "d2-style check && yarn lint:css",
         "lint:css": "stylelint './src/**/*.css' && prettier './src/**/*.css' --check",
-        "format": "yarn format:js && yarn format:text && yarn format:css",
-        "format:js": "d2-style js apply",
-        "format:text": "d2-style text apply",
+        "format": "d2-style apply && yarn format:css",
         "format:css": "prettier './src/**/*.css' --write",
-        "cypress:open": "d2-utils-cypress open --appStart 'yarn start'",
-        "cypress:run": "d2-utils-cypress run --appStart 'yarn start'",
-        "cypress:capture": "d2-utils-cypress run --capture --appStart 'yarn start' --serverMinorVersion 36",
-        "cypress:stub": "d2-utils-cypress run --stub --appStart 'yarn start' --serverMinorVersion 36"
+        "cypress:capture": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress run --env dhis2ApiVersion=37,networkMode=capture'",
+        "cypress:stub": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress run --env dhis2ApiVersion=37,networkMode=stub'",
+        "cypress:live": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress open --env networkMode=live'"
     },
     "dependencies": {
         "@dhis2/app-runtime": "^2.8.0",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "2.0.3",
-        "@dhis2/ui": "^6.5.0-alpha.2",
-        "cronstrue": "^1.110.0",
+        "@dhis2/ui": "^6.9.0",
+        "cronstrue": "^1.113.0",
         "history": "^4.9.0",
         "moment": "^2.29.1",
         "react-router": "^5.0.1",
         "react-router-dom": "^5.2.0"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^6.0.0",
-        "@dhis2/cli-style": "^7.3.0",
-        "@dhis2/cli-utils-cypress": "^7.0.0",
-        "@dhis2/cypress-commands": "^7.0.0",
-        "@dhis2/cypress-plugins": "^7.0.0",
-        "@testing-library/cypress": "^7.0.4",
-        "@testing-library/react-hooks": "^5.1.0",
+        "@dhis2/cli-app-scripts": "^6.2.0",
+        "@dhis2/cli-style": "^8.4.0",
+        "@dhis2/cli-utils-cypress": "^8.0.0-alpha.8",
+        "@dhis2/cypress-commands": "^8.0.0-alpha.8",
+        "@dhis2/cypress-plugins": "^8.0.0-alpha.8",
+        "@testing-library/cypress": "^7.0.6",
+        "@testing-library/react-hooks": "^7.0.0",
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.15.6",
         "eslint-plugin-compat": "^3.9.0",
-        "eslint-plugin-i18next": "^5.0.0",
-        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-i18next": "^5.1.1",
+        "eslint-plugin-import": "^2.23.4",
         "eslint-plugin-jsx-a11y": "^6.4.1",
         "identity-obj-proxy": "^3.0.0",
-        "stylelint": "^13.12.0",
+        "start-server-and-test": "^1.12.5",
+        "stylelint": "^13.13.1",
         "stylelint-config-prettier": "^8.0.2",
-        "stylelint-config-standard": "^20.0.0",
-        "stylelint-no-unsupported-browser-features": "^4.1.4"
-    },
-    "husky": {
-        "hooks": {
-            "commit-msg": "d2-style commit check",
-            "pre-commit": "d2-style js apply && npm run lint:css && npm run lint:js"
-        }
+        "stylelint-config-standard": "^22.0.0",
+        "stylelint-no-unsupported-browser-features": "^5.0.1"
     },
     "jest": {
         "setupFilesAfterEnv": [
