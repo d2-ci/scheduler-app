@@ -20,7 +20,7 @@
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "2.0.3",
         "@dhis2/ui": "^6.9.0",
-        "cronstrue": "^1.113.0",
+        "cronstrue": "^1.114.0",
         "history": "^4.9.0",
         "moment": "^2.29.1",
         "react-router": "^5.0.1",
@@ -29,7 +29,7 @@
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^6.2.0",
         "@dhis2/cli-style": "^8.4.1",
-        "@dhis2/cli-utils-cypress": "^8.0.0-alpha.8",
+        "@dhis2/cli-utils-cypress": "^8.0.0-alpha.9",
         "@dhis2/cypress-commands": "^8.0.0-alpha.8",
         "@dhis2/cypress-plugins": "^8.0.0-alpha.8",
         "@testing-library/cypress": "^7.0.6",
