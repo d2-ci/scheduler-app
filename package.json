@@ -19,7 +19,7 @@
         "@dhis2/app-runtime": "^3.8.0",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "2.0.3",
-        "@dhis2/ui": "^8.13.1",
+        "@dhis2/ui": "^8.13.14",
         "classnames": "^2.3.1",
         "cronstrue": "^1.114.0",
         "history": "^4.9.0",
@@ -32,7 +32,7 @@
         "styled-jsx": "^4.0.1"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^8.0.1",
+        "@dhis2/cli-app-scripts": "^10.3.9",
         "@dhis2/cli-style": "^10.4.1",
         "@dhis2/cli-utils-cypress": "^9.0.2",
         "@dhis2/cypress-commands": "^9.0.2",
@@ -70,5 +70,5 @@
             "\\.css$": "identity-obj-proxy"
         }
     },
-    "version": "101.0.1"
+    "version": "101.1.2"
 }
