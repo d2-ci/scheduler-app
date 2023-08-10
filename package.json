@@ -11,20 +11,20 @@
         "lint:css": "stylelint './src/**/*.css' && prettier './src/**/*.css' --check",
         "format": "d2-style apply && yarn format:css",
         "format:css": "prettier './src/**/*.css' --write",
-        "cypress:capture": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress run --env dhis2ApiVersion=38,networkMode=capture'",
-        "cypress:stub": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress run --env dhis2ApiVersion=38,networkMode=stub'",
+        "cypress:capture": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress run --env networkMode=capture'",
+        "cypress:stub": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress run --env networkMode=stub'",
         "cypress:live": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress open --env networkMode=live'"
     },
     "dependencies": {
-        "@dhis2/app-runtime": "^3.2.0",
+        "@dhis2/app-runtime": "^3.8.0",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "2.0.3",
-        "@dhis2/ui": "^7.2.0",
+        "@dhis2/ui": "^8.13.14",
         "classnames": "^2.3.1",
         "cronstrue": "^1.114.0",
         "history": "^4.9.0",
         "moment": "^2.29.1",
-        "prop-types": "^15.7.2",
+        "prop-types": "^15.8.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-router": "^5.0.1",
@@ -32,7 +32,7 @@
         "styled-jsx": "^4.0.1"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^8.0.1",
+        "@dhis2/cli-app-scripts": "^10.3.9",
         "@dhis2/cli-style": "^10.4.1",
         "@dhis2/cli-utils-cypress": "^9.0.2",
         "@dhis2/cypress-commands": "^9.0.2",
@@ -70,5 +70,5 @@
             "\\.css$": "identity-obj-proxy"
         }
     },
-    "version": "100.2.2"
+    "version": "101.2.0"
 }
