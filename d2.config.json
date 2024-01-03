@@ -6,7 +6,7 @@
   "id": "2eacfda3-e887-4121-80bc-63ee82fba5e9",
   "minDHIS2Version": "2.40",
   "coreApp": true,
-  "version": "101.2.8",
+  "version": "101.3.0",
   "entryPoints": {
     "app": "index.html"
   }
